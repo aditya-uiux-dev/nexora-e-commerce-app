@@ -1,0 +1,103 @@
+# NEXORA — Modern E-Commerce Experience
+
+NEXORA is a modern multi-category e-commerce website designed to bring everyday shopping into one clean, intuitive, and responsive experience.
+
+The project focuses on creating a polished shopping interface with strong visual hierarchy, product discovery, intuitive navigation, and a seamless user experience across different product categories.
+
+## ✨ Project Overview
+
+NEXORA is designed as an "everything store" where users can discover products across categories such as:
+
+- Electronics
+- Fashion
+- Home & Living
+- Beauty
+- Sports
+- Accessories
+- Gaming
+- Travel
+
+The project is being designed in Figma and developed from scratch using HTML and CSS.
+
+## 🎯 Design Goals
+
+- Clean and modern visual language
+- Simple product discovery
+- Clear category navigation
+- Strong visual hierarchy
+- Consistent spacing and typography
+- Responsive experience across screen sizes
+- Professional e-commerce UI patterns
+
+## 🛠️ Tech Stack
+
+- HTML5
+- CSS3
+- Figma
+- Git & GitHub
+
+## 📌 Current Progress
+
+### Completed
+- [x] Figma homepage design
+- [x] Navbar
+- [x] Hero section
+
+### In Progress
+- [ ] Category section
+- [ ] Featured products
+- [ ] Deals section
+- [ ] Trending products
+- [ ] Personalized products
+- [ ] Newsletter section
+- [ ] Footer
+- [ ] Responsive design
+
+### Planned
+- [ ] Shop / Product listing page
+- [ ] Product details page
+- [ ] Search experience
+- [ ] Filtering & sorting
+- [ ] Wishlist
+- [ ] Shopping cart
+- [ ] Checkout
+- [ ] Order confirmation
+- [ ] Order tracking
+- [ ] Account section
+
+## 🎨 Design
+
+The complete interface is first designed in Figma before being translated into HTML and CSS.
+
+The design direction is intentionally minimal, modern, and product-focused, allowing the products and categories to remain the primary visual elements.
+
+## 📂 Project Structure
+
+```text
+nexora-e-commerce-app/
+│
+├── index.html
+├── Hero.html
+├── navbar.css
+├── Navbar.html
+│
+└── assets/
+    ├── images/
+    └── icons/
+    The project structure will evolve as more sections and pages are developed.
+
+🚀 Development Approach
+
+NEXORA is being developed progressively rather than building the entire application at once.
+
+Each major section is designed, coded, tested, and committed separately to maintain a clear development history and make the project easier to improve.
+
+📱 Responsive Design
+
+The interface is being designed with responsive layouts in mind, with separate desktop and mobile experiences planned during development.
+
+📈 Project Status
+
+Currently in active development.
+
+More sections, responsive layouts, and e-commerce functionality will be added progressively
