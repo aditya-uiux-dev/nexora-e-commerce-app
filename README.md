@@ -100,4 +100,4 @@ The interface is being designed with responsive layouts in mind, with separate d
 
 Currently in active development.
 
-More sections, responsive layouts, and e-commerce functionality will be added progressively
+More sections, responsive layouts, and e-commerce functionality will be added progressivelyS
