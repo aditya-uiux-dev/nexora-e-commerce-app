@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXORA — Shop by Category</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14171f;
+      --canvas: #f4f5f7;
+      --surface: #ffffff;
+      --muted: #6b7280;
+      --font-display: "Space Grotesk", "Inter", sans-serif;
+      --font-body: "Inter", sans-serif;
+      --space-2: 1rem;
+      --space-3: 1.5rem;
+      --space-4: 2rem;
+      --space-8: 4rem;
+      --radius-md: 20px;
+      --max-width: 1280px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font-body); color: var(--ink); background: var(--canvas); }
+    h2 { font-family: var(--font-display); margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container { max-width: var(--max-width); margin-inline: auto; padding-inline: 1.5rem; }
+    @media (min-width: 1024px) { .container { padding-inline: var(--space-4); } }
+
+    section { padding-block: var(--space-8); }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: var(--space-4);
+    }
+    .section-title { font-size: 1.5rem; font-weight: 600; }
+
+    .view-all {
+      display: none;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.875rem;
+      color: var(--ink-soft, #2b2f3a);
+    }
+    .view-all:hover { color: var(--ink); }
+    .view-all svg { width: 15px; height: 15px; }
+    @media (min-width: 640px) { .view-all { display: inline-flex; } }
+
+    /* ---------- Category grid ---------- */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-3);
+    }
+    @media (min-width: 640px) {
+      .category-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .category-card {
+      display: flex;
+      flex-direction: column;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--surface);
+      transition: box-shadow 200ms ease;
+    }
+    .category-card:hover {
+      box-shadow: 0 8px 24px rgba(20, 23, 31, 0.08);
+    }
+    .category-card__media {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+    .category-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 300ms ease;
+    }
+    .category-card:hover .category-card__media img {
+      transform: scale(1.05);
+    }
+    .category-card__body {
+      padding: var(--space-2);
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .category-card__name { font-size: 0.875rem; font-weight: 500; }
+    .category-card__tagline { font-size: 0.75rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <section class="container">
+    <div class="section-head">
+      <h2 class="section-title">Shop by category</h2>
+      <a href="#" class="view-all">
+        View all categories
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <div class="category-grid">
+
+      <a href="#" class="category-card">
+        <div class="category-card__media"><img src="https://picsum.photos/seed/nexora-electronics/400/300" alt="" /></div>
+        <div class="category-card__body">
+          <span class="category-card__name">Electronics</span>
+          <span class="category-card__tagline">Phones, audio & more</span>
+        </div>
+      </a>
+
+      <a href="#" class="category-card">
+        <div class="category-card__media"><img src="https://picsum.photos/seed/nexora-fashion/400/300" alt="" /></div>
+        <div class="category-card__body">
+          <span class="category-card__name">Fashion</span>
+          <span class="category-card__tagline">New season edits</span>
+        </div>
+      </a>
+
+      <a href="#" class="category-card">
+        <div class="category-card__media"><img src="https://picsum.photos/seed/nexora-home/400/300" alt="" /></div>
+        <div class="category-card__body">
+          <span class="category-card__name">Home &amp; Living</span>
+          <span class="category-card__tagline">For everyday comfort</span>
+        </div>
+      </a>
+
+      <a href="#" class="category-card">
+        <div class="category-card__media"><img src="https://picsum.photos/seed/nexora-beauty/400/300" alt="" /></div>
+        <div class="category-card__body">
+          <span class="category-card__name">Beauty</span>
+          <span class="category-card__tagline">Skincare & essentials</span>
+        </div>
+      </a>
+
+      <a href="#" class="category-card">
+        <div class="category-card__media"><img src="https://picsum.photos/seed/nexora-sports/400/300" alt="" /></div>
+        <div class="category-card__body">
+          <span class="category-card__name">Sports</span>
+          <span class="category-card__tagline">Gear up, move more</span>
+        </div>
+      </a>
+
+      <a href="#" class="category-card">
+        <div class="category-card__media"><img src="https://picsum.photos/seed/nexora-accessories/400/300" alt="" /></div>
+        <div class="category-card__body">
+          <span class="category-card__name">Accessories</span>
+          <span class="category-card__tagline">Small details, big impact</span>
+        </div>
+      </a>
+
+      <a href="#" class="category-card">
+        <div class="category-card__media"><img src="https://picsum.photos/seed/nexora-gaming/400/300" alt="" /></div>
+        <div class="category-card__body">
+          <span class="category-card__name">Gaming</span>
+          <span class="category-card__tagline">Play at your best</span>
+        </div>
+      </a>
+
+      <a href="#" class="category-card">
+        <div class="category-card__media"><img src="https://picsum.photos/seed/nexora-travel/400/300" alt="" /></div>
+        <div class="category-card__body">
+          <span class="category-card__name">Travel</span>
+          <span class="category-card__tagline">Built for the journey</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+</body>
+</html>
