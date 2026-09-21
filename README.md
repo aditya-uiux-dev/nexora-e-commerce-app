@@ -1,12 +1,12 @@
 # NEXORA — Modern E-Commerce Experience
 
-NEXORA is a modern multi-category e-commerce website designed to bring everyday shopping into one clean, intuitive, and responsive experience.
+NEXORA is a modern multi-category e-commerce website designed as an "everything store" where users can discover products across different categories in one clean and intuitive shopping experience.
 
-The project focuses on creating a polished shopping interface with strong visual hierarchy, product discovery, intuitive navigation, and a seamless user experience across different product categories.
+The project focuses on modern UI design, product discovery, clear navigation, strong visual hierarchy, and a responsive e-commerce experience.
 
 ## ✨ Project Overview
 
-NEXORA is designed as an "everything store" where users can discover products across categories such as:
+NEXORA brings multiple shopping categories together in one platform, including:
 
 - Electronics
 - Fashion
@@ -17,7 +17,7 @@ NEXORA is designed as an "everything store" where users can discover products ac
 - Gaming
 - Travel
 
-The project is being designed in Figma and developed from scratch using HTML and CSS.
+The complete interface is first designed in Figma and then developed from scratch using HTML and CSS.
 
 ## 🎯 Design Goals
 
@@ -26,8 +26,9 @@ The project is being designed in Figma and developed from scratch using HTML and
 - Clear category navigation
 - Strong visual hierarchy
 - Consistent spacing and typography
-- Responsive experience across screen sizes
+- Responsive layouts
 - Professional e-commerce UI patterns
+- Easy and intuitive shopping experience
 
 ## 🛠️ Tech Stack
 
@@ -39,65 +40,57 @@ The project is being designed in Figma and developed from scratch using HTML and
 ## 📌 Current Progress
 
 ### Completed
-- [x] Figma homepage design
+
+- [x] Complete Figma homepage design
 - [x] Navbar
 - [x] Hero section
+- [x] Shop by Category section
+- [x] Featured Products section
 
 ### In Progress
-- [ ] Category section
-- [ ] Featured products
-- [ ] Deals section
-- [ ] Trending products
-- [ ] Personalized products
+
+- [ ] Deals / Promotional section
+- [ ] Trending Products section
+- [ ] Benefits / Why NEXORA section
+- [ ] Personalized Products section
 - [ ] Newsletter section
 - [ ] Footer
 - [ ] Responsive design
 
 ### Planned
-- [ ] Shop / Product listing page
-- [ ] Product details page
+
+- [ ] Shop / Product Listing page
+- [ ] Product Details page
 - [ ] Search experience
 - [ ] Filtering & sorting
 - [ ] Wishlist
-- [ ] Shopping cart
+- [ ] Shopping Cart
 - [ ] Checkout
-- [ ] Order confirmation
-- [ ] Order tracking
+- [ ] Order Confirmation
+- [ ] Order Tracking
 - [ ] Account section
 
 ## 🎨 Design
 
-The complete interface is first designed in Figma before being translated into HTML and CSS.
+NEXORA is designed in Figma before development begins.
 
-The design direction is intentionally minimal, modern, and product-focused, allowing the products and categories to remain the primary visual elements.
+The visual direction is minimal, modern, and product-focused, with neutral backgrounds, clean typography, rounded product cards, and strong product imagery.
+
+The homepage is structured to guide users through:
+
+**Discovery → Categories → Products → Deals → Recommendations → Shopping**
 
 ## 📂 Project Structure
 
 ```text
 nexora-e-commerce-app/
 │
-├── index.html
-├── Hero.html
-├── navbar.css
-├── Navbar.html
+├── sections/
 │
-└── assets/
-    ├── images/
-    └── icons/
-    The project structure will evolve as more sections and pages are developed.
-
-🚀 Development Approach
-
-NEXORA is being developed progressively rather than building the entire application at once.
-
-Each major section is designed, coded, tested, and committed separately to maintain a clear development history and make the project easier to improve.
-
-📱 Responsive Design
-
-The interface is being designed with responsive layouts in mind, with separate desktop and mobile experiences planned during development.
-
-📈 Project Status
-
-Currently in active development.
-
-More sections, responsive layouts, and e-commerce functionality will be added progressivelyS
+├── index.html
+├── Navbar.html
+├── Hero.html
+├── Categories.html
+├── Featured.html
+│
+└── README.md
