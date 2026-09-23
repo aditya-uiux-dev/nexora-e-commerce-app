@@ -49,7 +49,7 @@ The complete interface is first designed in Figma and then developed from scratc
 
 ### In Progress
 
-- [ ] Deals / Promotional section
+
 - [ ] Trending Products section
 - [ ] Benefits / Why NEXORA section
 - [ ] Personalized Products section
@@ -92,5 +92,5 @@ nexora-e-commerce-app/
 ├── Hero.html
 ├── Categories.html
 ├── Featured.html
-│
+├── deals.html
 └── README.md
