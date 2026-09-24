@@ -46,6 +46,7 @@ The complete interface is first designed in Figma and then developed from scratc
 - [x] Hero section
 - [x] Shop by Category section
 - [x] Featured Products section
+- [x] Trending Products section
 
 ### In Progress
 

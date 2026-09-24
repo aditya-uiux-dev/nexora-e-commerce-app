@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXORA — Trending Now</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14171f;
+      --canvas: #f4f5f7;
+      --surface: #ffffff;
+      --signal: #ff5a36;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --success: #16a34a;
+      --font-display: "Space Grotesk", "Inter", sans-serif;
+      --font-body: "Inter", sans-serif;
+      --space-1: 0.5rem;
+      --space-2: 1rem;
+      --space-3: 1.5rem;
+      --space-4: 2rem;
+      --space-8: 4rem;
+      --radius-md: 20px;
+      --radius-full: 999px;
+      --max-width: 1280px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font-body); color: var(--ink); background: var(--canvas); }
+    h2, h3 { font-family: var(--font-display); margin: 0; }
+    p { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
+    img { display: block; max-width: 100%; }
+
+    .container { max-width: var(--max-width); margin-inline: auto; padding-inline: 1.5rem; }
+    @media (min-width: 1024px) { .container { padding-inline: var(--space-4); } }
+
+    section { padding-block: var(--space-8); }
+
+    .section-title { font-size: 1.5rem; font-weight: 600; }
+    .section-sub { margin-top: 0.25rem; color: var(--muted); }
+
+    /* ---------- Product grid ---------- */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: var(--space-3);
+      row-gap: var(--space-4);
+      margin-top: var(--space-4);
+    }
+    @media (min-width: 1024px) {
+      .product-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    /* ---------- Product card ---------- */
+    .product-card { display: flex; flex-direction: column; position: relative; }
+
+    .product-card__media {
+      position: relative;
+      display: block;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+    .product-card__media img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 300ms ease;
+    }
+    .product-card:hover .product-card__media img { transform: scale(1.05); }
+
+    .product-card__badges {
+      position: absolute; top: 0.75rem; left: 0.75rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .badge {
+      display: inline-flex; align-items: center;
+      border-radius: var(--radius-full);
+      padding: 0.35rem 0.7rem;
+      font-size: 0.75rem; font-weight: 500;
+    }
+    .badge-sale { background: var(--signal); color: #fff; }
+    .badge-out { background: var(--line); color: var(--muted); }
+
+    .icon-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%; border: none;
+      background: rgba(255, 255, 255, 0.9); color: var(--ink);
+      backdrop-filter: blur(4px);
+    }
+    .icon-btn:hover { background: #fff; }
+    .icon-btn svg { width: 17px; height: 17px; }
+    .icon-btn.is-active svg { fill: var(--signal); stroke: var(--signal); }
+
+    .product-card__wishlist { position: absolute; top: 0.75rem; right: 0.75rem; }
+
+    .product-card__add {
+      position: absolute; bottom: 0.75rem; right: 0.75rem;
+      width: 40px; height: 40px; border-radius: 50%; border: none;
+      background: var(--ink); color: #fff;
+      display: inline-flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 200ms ease;
+    }
+    .product-card:hover .product-card__add { opacity: 1; }
+    .product-card__add svg { width: 18px; height: 18px; }
+
+    .product-card__quickadd {
+      position: absolute; bottom: 0.75rem; left: 0.75rem; right: 3rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 34px; border-radius: var(--radius-full);
+      background: var(--ink); color: #fff;
+      font-size: 0.75rem; font-weight: 500; border: none;
+      opacity: 0; transform: translateY(6px);
+      transition: opacity 200ms ease, transform 200ms ease;
+    }
+    .product-card:hover .product-card__quickadd { opacity: 1; transform: translateY(0); }
+
+    .product-card__body { margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.3rem; }
+    .product-card__brand { font-size: 0.75rem; color: var(--muted); }
+    .product-card__name { font-size: 0.875rem; font-weight: 500; }
+
+    .rating { display: flex; align-items: center; gap: 0.4rem; }
+    .rating .stars { display: inline-flex; gap: 0.15rem; }
+    .rating svg { width: 14px; height: 14px; }
+    .rating svg.filled { fill: var(--signal); stroke: var(--signal); }
+    .rating svg.empty { fill: var(--line); stroke: var(--line); }
+    .rating .count { font-size: 0.75rem; color: var(--muted); }
+
+    .product-card__price { display: flex; align-items: baseline; gap: 0.5rem; padding-top: 0.15rem; }
+    .product-card__price .price { font-weight: 600; font-size: 0.9rem; }
+    .product-card__price .original { font-size: 0.75rem; color: var(--muted); text-decoration: line-through; }
+    .product-card__delivery { font-size: 0.75rem; color: var(--success); }
+  </style>
+</head>
+<body>
+
+  <section class="container">
+    <h2 class="section-title">Trending now</h2>
+    <p class="section-sub">Products shoppers are loving this week.</p>
+
+    <div class="product-grid">
+
+      <article class="product-card">
+        <a href="#" class="product-card__media">
+          <img src="https://picsum.photos/seed/nexora-t1/600/600" alt="Nomad Insulated Bottle" />
+        </a>
+        <button class="icon-btn product-card__wishlist" aria-label="Add to wishlist" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.6-1.6-4.2-1.6-5.8 0L12 7.6l-3-3c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8L12 19l8.8-8.6c1.6-1.6 1.6-4.2 0-5.8Z"/></svg>
+        </button>
+        <button class="product-card__add" aria-label="Add Nomad Insulated Bottle to cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <button class="product-card__quickadd">Quick Add</button>
+        <div class="product-card__body">
+          <span class="product-card__brand">Nomad</span>
+          <h3 class="product-card__name">Nomad Insulated Bottle</h3>
+          <div class="rating">
+            <span class="stars">
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="empty" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            </span>
+            <span class="count">4.5 (152)</span>
+          </div>
+          <div class="product-card__price"><span class="price">₹899</span></div>
+          <div class="product-card__delivery">Free delivery</div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <a href="#" class="product-card__media">
+          <img src="https://picsum.photos/seed/nexora-t2/600/600" alt="Halo Desk Lamp" />
+          <div class="product-card__badges"><span class="badge badge-sale">-20%</span></div>
+        </a>
+        <button class="icon-btn product-card__wishlist" aria-label="Add to wishlist" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.6-1.6-4.2-1.6-5.8 0L12 7.6l-3-3c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8L12 19l8.8-8.6c1.6-1.6 1.6-4.2 0-5.8Z"/></svg>
+        </button>
+        <button class="product-card__add" aria-label="Add Halo Desk Lamp to cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <button class="product-card__quickadd">Quick Add</button>
+        <div class="product-card__body">
+          <span class="product-card__brand">Halo</span>
+          <h3 class="product-card__name">Halo Desk Lamp</h3>
+          <div class="rating">
+            <span class="stars">
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="empty" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            </span>
+            <span class="count">4.2 (63)</span>
+          </div>
+          <div class="product-card__price"><span class="price">₹1,599</span><span class="original">₹1,999</span></div>
+          <div class="product-card__delivery">Free delivery</div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <a href="#" class="product-card__media">
+          <img src="https://picsum.photos/seed/nexora-t3/600/600" alt="Drift Sunglasses" />
+          <div class="product-card__badges"><span class="badge badge-out">Out of stock</span></div>
+        </a>
+        <button class="icon-btn product-card__wishlist" aria-label="Add to wishlist" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.6-1.6-4.2-1.6-5.8 0L12 7.6l-3-3c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8L12 19l8.8-8.6c1.6-1.6 1.6-4.2 0-5.8Z"/></svg>
+        </button>
+        <div class="product-card__body">
+          <span class="product-card__brand">Drift</span>
+          <h3 class="product-card__name">Drift Sunglasses</h3>
+          <div class="rating">
+            <span class="stars">
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="empty" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            </span>
+            <span class="count">4.1 (41)</span>
+          </div>
+          <div class="product-card__price"><span class="price">₹1,299</span></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <a href="#" class="product-card__media">
+          <img src="https://picsum.photos/seed/nexora-t4/600/600" alt="Basecamp Duffel 40L" />
+        </a>
+        <button class="icon-btn product-card__wishlist" aria-label="Add to wishlist" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.6-1.6-4.2-1.6-5.8 0L12 7.6l-3-3c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8L12 19l8.8-8.6c1.6-1.6 1.6-4.2 0-5.8Z"/></svg>
+        </button>
+        <button class="product-card__add" aria-label="Add Basecamp Duffel 40L to cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <button class="product-card__quickadd">Quick Add</button>
+        <div class="product-card__body">
+          <span class="product-card__brand">Basecamp</span>
+          <h3 class="product-card__name">Basecamp Duffel 40L</h3>
+          <div class="rating">
+            <span class="stars">
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+              <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+            </span>
+            <span class="count">4.8 (187)</span>
+          </div>
+          <div class="product-card__price"><span class="price">₹3,299</span></div>
+          <div class="product-card__delivery">Free delivery</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</body>
+</html>
