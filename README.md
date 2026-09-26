@@ -27,7 +27,7 @@ I focus on designing modern digital experiences in Figma and turning those desig
 
 - **Portfolio:** https://aditya-portfoliolivewebsite.netlify.app/
 - **GitHub:** https://github.com/aditya-uiux-dev
-- **LinkedIn:** https://www.linkedin.com/in/adityaraj-uiux/
+- **LinkedIn:** https://www.linkedin.com/in/aditya-raj-2750063a0/
 
 ---
 
