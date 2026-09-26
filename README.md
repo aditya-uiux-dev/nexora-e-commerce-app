@@ -1,8 +1,10 @@
 # NEXORA — Modern E-Commerce Experience
 
-NEXORA is a modern multi-category e-commerce website designed as an "everything store" where users can discover products across different categories in one clean and intuitive shopping experience.
+NEXORA is a modern multi-category e-commerce website designed as an **"everything store"** where users can discover products across different categories through a clean, intuitive, and visually focused shopping experience.
 
-The project focuses on modern UI design, product discovery, clear navigation, strong visual hierarchy, and a responsive e-commerce experience.
+The project was designed in **Figma** and developed from scratch using **HTML5 and CSS3**, with each major homepage section built individually and integrated into the final website.
+
+---
 
 ## ✨ Project Overview
 
@@ -17,7 +19,9 @@ NEXORA brings multiple shopping categories together in one platform, including:
 - Gaming
 - Travel
 
-The complete interface is first designed in Figma and then developed from scratch using HTML and CSS.
+The interface focuses on product discovery, clear navigation, strong visual hierarchy, consistent spacing, and a modern e-commerce experience.
+
+---
 
 ## 🎯 Design Goals
 
@@ -26,60 +30,64 @@ The complete interface is first designed in Figma and then developed from scratc
 - Clear category navigation
 - Strong visual hierarchy
 - Consistent spacing and typography
-- Responsive layouts
+- Modern product cards
+- Promotional content sections
+- Responsive-ready layouts
 - Professional e-commerce UI patterns
-- Easy and intuitive shopping experience
+- Intuitive shopping experience
+
+---
 
 ## 🛠️ Tech Stack
 
 - HTML5
 - CSS3
 - Figma
-- Git & GitHub
+- Git
+- GitHub
 
-## 📌 Current Progress
+---
 
-### Completed
+## 📌 Development Progress
 
-- [x] Complete Figma homepage design
+### Homepage — Completed ✅
+
 - [x] Navbar
 - [x] Hero section
-- [x] Shop by Category section
-- [x] Featured Products section
-- [x] Trending Products section
+- [x] Shop by Category
+- [x] Featured Products
+- [x] Deals / Promotional section
+- [x] Trending Products
+- [x] Benefits / Why NEXORA
+- [x] Personalized Products
+- [x] Newsletter
+- [x] Footer
+- [x] Homepage integration
 
-### In Progress
+The complete homepage has been designed, coded, integrated, and tested section by section.
 
+---
 
-- [ ] Trending Products section
-- [ ] Benefits / Why NEXORA section
-- [ ] Personalized Products section
-- [ ] Newsletter section
-- [ ] Footer
-- [ ] Responsive design
+## 🎨 Design Process
 
-### Planned
+NEXORA follows a **design-first development workflow**.
 
-- [ ] Shop / Product Listing page
-- [ ] Product Details page
-- [ ] Search experience
-- [ ] Filtering & sorting
-- [ ] Wishlist
-- [ ] Shopping Cart
-- [ ] Checkout
-- [ ] Order Confirmation
-- [ ] Order Tracking
-- [ ] Account section
+### 1. Design
+The complete interface was designed in Figma with a focus on layout, typography, spacing, product presentation, and visual hierarchy.
 
-## 🎨 Design
+### 2. Development
+The design was converted into HTML and CSS and developed section by section.
 
-NEXORA is designed in Figma before development begins.
+### 3. Integration
+Each completed section was integrated into the main homepage.
 
-The visual direction is minimal, modern, and product-focused, with neutral backgrounds, clean typography, rounded product cards, and strong product imagery.
+### 4. Testing
+The interface was tested in the browser and refined during development.
 
-The homepage is structured to guide users through:
+### 5. Version Control
+Development milestones were committed and pushed to GitHub throughout the project.
 
-**Discovery → Categories → Products → Deals → Recommendations → Shopping**
+---
 
 ## 📂 Project Structure
 
@@ -88,10 +96,15 @@ nexora-e-commerce-app/
 │
 ├── sections/
 │
-├── index.html
 ├── Navbar.html
 ├── Hero.html
 ├── Categories.html
 ├── Featured.html
-├── deals.html
+├── Deals.html
+├── Trending.html
+├── Benefits.html
+├── Personalized.html
+├── Newsletter.html
+├── Footer.html
+├── index.html
 └── README.md
