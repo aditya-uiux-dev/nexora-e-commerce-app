@@ -2,13 +2,40 @@
 
 NEXORA is a modern multi-category e-commerce website designed as an **"everything store"** where users can discover products across different categories through a clean, intuitive, and visually focused shopping experience.
 
-The project was designed in **Figma** and developed from scratch using **HTML5 and CSS3**, with each major homepage section built individually and integrated into the final website.
+The project was designed in **Figma** and developed from scratch using **HTML5 and CSS3**. Each major section was developed individually and later integrated into the final homepage.
+
+---
+
+## 🌐 Live Preview
+
+🚀 **Live Website:**  
+https://nexora-e-commerce-app.netlify.app/
+
+💻 **GitHub Repository:**  
+https://github.com/aditya-uiux-dev/nexora-e-commerce-app
+
+---
+
+## 👨‍💻 About the Developer
+
+**Aditya Raj**  
+UI/UX Designer & Frontend Developer
+
+I focus on designing modern digital experiences in Figma and turning those designs into functional, clean, and responsive frontend interfaces.
+
+### 🔗 Connect With Me
+
+- **Portfolio:** https://aditya-portfoliolivewebsite.netlify.app/
+- **GitHub:** https://github.com/aditya-uiux-dev
+- **LinkedIn:** https://www.linkedin.com/in/adityaraj-uiux/
 
 ---
 
 ## ✨ Project Overview
 
-NEXORA brings multiple shopping categories together in one platform, including:
+NEXORA is designed as a multi-category **"everything store"**, bringing different shopping categories together in one platform.
+
+### Main Categories
 
 - Electronics
 - Fashion
@@ -19,36 +46,58 @@ NEXORA brings multiple shopping categories together in one platform, including:
 - Gaming
 - Travel
 
-The interface focuses on product discovery, clear navigation, strong visual hierarchy, consistent spacing, and a modern e-commerce experience.
+The interface focuses on:
+
+- Product discovery
+- Clear navigation
+- Strong visual hierarchy
+- Modern product presentation
+- Consistent spacing
+- Clean typography
+- Promotional content
+- Intuitive shopping flow
 
 ---
 
 ## 🎯 Design Goals
 
-- Clean and modern visual language
-- Simple product discovery
-- Clear category navigation
-- Strong visual hierarchy
-- Consistent spacing and typography
-- Modern product cards
-- Promotional content sections
-- Responsive-ready layouts
-- Professional e-commerce UI patterns
-- Intuitive shopping experience
+The main goal of NEXORA was to create a modern e-commerce experience that feels:
+
+- Clean
+- Minimal
+- Professional
+- Product-focused
+- Easy to navigate
+- Visually consistent
+- Scalable for future functionality
+
+The design was created with a strong focus on **UI hierarchy, spacing, typography, product cards, content organization, and user flow**.
 
 ---
 
 ## 🛠️ Tech Stack
 
+### Design
+
+- Figma
+
+### Development
+
 - HTML5
 - CSS3
-- Figma
+
+### Version Control
+
 - Git
 - GitHub
 
+### Deployment
+
+- Netlify
+
 ---
 
-## 📌 Development Progress
+## 📌 Development Status
 
 ### Homepage — Completed ✅
 
@@ -63,8 +112,11 @@ The interface focuses on product discovery, clear navigation, strong visual hier
 - [x] Newsletter
 - [x] Footer
 - [x] Homepage integration
+- [x] Final frontend implementation
+- [x] GitHub repository
+- [x] Netlify deployment
 
-The complete homepage has been designed, coded, integrated, and tested section by section.
+The complete homepage has been designed, coded, integrated, tested, and deployed.
 
 ---
 
@@ -72,20 +124,53 @@ The complete homepage has been designed, coded, integrated, and tested section b
 
 NEXORA follows a **design-first development workflow**.
 
-### 1. Design
-The complete interface was designed in Figma with a focus on layout, typography, spacing, product presentation, and visual hierarchy.
+### 1. Research & Planning
 
-### 2. Development
-The design was converted into HTML and CSS and developed section by section.
+The overall e-commerce structure and user journey were planned before development.
 
-### 3. Integration
-Each completed section was integrated into the main homepage.
+### 2. UI Design
 
-### 4. Testing
-The interface was tested in the browser and refined during development.
+The complete interface was designed in Figma with a focus on:
 
-### 5. Version Control
+- Layout
+- Typography
+- Spacing
+- Product presentation
+- Visual hierarchy
+- Navigation
+- Content structure
+
+### 3. Frontend Development
+
+The Figma design was converted into HTML and CSS.
+
+Instead of building the entire page at once, each major section was developed individually.
+
+### 4. Section Integration
+
+After completing each section, it was integrated into the main homepage.
+
+### 5. Testing & Refinement
+
+The interface was tested in the browser and refined during development to maintain visual consistency with the original design.
+
+### 6. Version Control
+
 Development milestones were committed and pushed to GitHub throughout the project.
+
+### 7. Deployment
+
+The completed frontend was deployed using Netlify.
+
+---
+
+## 🛍️ Homepage Experience
+
+The homepage follows a structured product-discovery journey:
+
+**Discovery → Categories → Featured Products → Deals → Trending → Benefits → Personalization → Newsletter → Footer**
+
+This structure allows users to move naturally from discovering the store to exploring products and promotional content.
 
 ---
 
@@ -106,5 +191,7 @@ nexora-e-commerce-app/
 ├── Personalized.html
 ├── Newsletter.html
 ├── Footer.html
+├── home-bottom.html
 ├── index.html
 └── README.md
+
